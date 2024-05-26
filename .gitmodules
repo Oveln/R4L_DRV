@@ -1,0 +1,3 @@
+[submodule "linux_raspberrypi"]
+	path = linux_raspberrypi
+	url = git@github.com:Oveln/linux_raspberrypi_r4l_learn
