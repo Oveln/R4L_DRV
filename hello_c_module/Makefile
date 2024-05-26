@@ -1,4 +1,4 @@
-KERNELDIR ?= /home/oveln/projects/R4L_DRV/linux_raspberrypi
+KERNELDIR ?= ../linux_raspberrypi
 PWD := $(shell pwd)
 
 obj-m := c_print.o
