@@ -1,9 +1,10 @@
-kernel_image="linux_raspberrypi/build_4b/arch/arm64/boot/Image"
+kernel_image="kernel8.img"
 kenrnel_dtb="linux_raspberrypi/build_4b/arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b-plus.dtb"
 IMG="2024-03-12-raspios-bookworm-arm64-lite.img"
 qemu-system-aarch64 \
-        -machine type=raspi3b \
-        -m 1G \
+        -smp 4 -cpu cortex-a72 \
+        -machine raspi4b \
+        -m 2G \
         -k en-us \
         -dtb $kenrnel_dtb \
         -kernel $kernel_image \
