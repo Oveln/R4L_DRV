@@ -3,7 +3,7 @@
 	url = git@github.com:Oveln/linux_raspberrypi_r4l_learn
 [submodule "arceos"]
 	path = arceos
-	url = https://github.com/chenlongos/arceos
+	url = git@github.com:Oveln/arceos.git
 [submodule "rust-raspberrypi-OS-tutorials"]
 	path = rust-raspberrypi-OS-tutorials
 	url = https://github.com/chenlongos/rust-raspberrypi-OS-tutorials.git
