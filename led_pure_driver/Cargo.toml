@@ -1,0 +1,14 @@
+[package]
+name = "led_pure_driver"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tock-registers ={ version = "0.9.0"}
+osl = { path = "../linux_raspberrypi/rust/osl"}
+
+# [features]
+# linux=["osl/linux"]
+# default=["linux"]
+
+# [target.'cfg(target_os = "linux")'.dependencies]
