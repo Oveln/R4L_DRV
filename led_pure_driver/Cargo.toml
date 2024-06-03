@@ -5,10 +5,11 @@ edition = "2021"
 
 [dependencies]
 tock-registers ={ version = "0.9.0"}
-osl = { path = "../linux_raspberrypi/rust/osl"}
+osl = { path = "../linux_raspberrypi/rust/osl", optional = true}
 
-# [features]
-# linux=["osl/linux"]
+[features]
+# 当有linux特性时添加osl依赖
+linux=["osl"]
 # default=["linux"]
 
 # [target.'cfg(target_os = "linux")'.dependencies]

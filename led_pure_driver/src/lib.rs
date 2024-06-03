@@ -7,10 +7,13 @@ use tock_registers::interfaces::{Readable, Writeable};
 
 pub mod registers;
 
+#[cfg(feature = "osl")]
 use osl::log_info;
 
+#[cfg(feature = "osl")]
 #[macro_use]
 extern crate osl;
+#[cfg(feature = "osl")]
 const __LOG_PREFIX: &[u8] = b"[Led Driver]\0";
 
 pub struct Led<T: Deref<Target = Registers>> {
@@ -40,18 +43,21 @@ impl<T: Deref<Target = Registers>> Led<T> {
         } else {
             self.on();
         }
+        #[cfg(feature = "osl")]
         log_info!("Hello");
     }
 
     pub fn off(&mut self) {
         self.state = false;
         self.regs.gpclr[0].set(1 << 16);
+        #[cfg(feature = "osl")]
         log_info!("Led state: {}", self.state);
     }
 
     pub fn on(&mut self) {
         self.state = true;
         self.regs.gpset[0].set(1 << 16);
+        #[cfg(feature = "osl")]
         log_info!("Led state: {}", self.state);
     }
 }
